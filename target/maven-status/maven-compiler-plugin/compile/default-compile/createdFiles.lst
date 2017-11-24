@@ -1,8 +1,0 @@
-conference/controller/OcrStatusController.class
-conference/model/Program.class
-conference/repository/ConferenceRepository.class
-webapp/service/CalcService.class
-conference/Application.class
-conference/model/User.class
-conference/repository/ProgramRepository.class
-conference/model/Conference.class
