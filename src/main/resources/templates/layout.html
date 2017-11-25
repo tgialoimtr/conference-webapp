@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Conference Submission</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<div th:fragment="include-fragment">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"/>
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css"/>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</div>
+
+</head>
+<body>
+
+	<div th:fragment="userheader-fragment">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	   <div class="container-fluid">
+	     <div class="navbar-header">
+	           <a class="navbar-brand" href="#">WebSiteName</a>
+	     </div>
+	     <ul class="nav navbar-nav">
+	         <li class="active"><a href="#">Home</a></li>
+	         <li class="dropdown">
+	         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
+	             <span class="caret"></span></a>
+	             <ul class="dropdown-menu">
+	               <li><a href="#">Page 1-1</a></li>
+	               <li><a href="#">Page 1-2</a></li>
+	               <li><a href="#">Page 1-3</a></li>
+	           </ul>
+	         </li>
+	         <li><a href="#">Page 2</a></li>
+	         <li><a href="#">Page 3</a></li>
+	     </ul>
+	     </div>
+	 </nav>
+	</div>  
+
+	<div th:fragment="adminheader-fragment">
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">
+						ADMIN
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">			
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="http://www.sciax2.it/forum/utenti/-kik_226760/" target="_blank">Return back</a></li>
+						<li class="dropdown ">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+								Settings
+								<span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li class="dropdown-header">SETTINGS</li>
+									<li class=""><a href="#">Link</a></li>
+									<li class=""><a href="#">Other Link</a></li>
+									<li class=""><a href="#">Other Link</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Logout</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+	</div>
+
+    <div th:fragment="secured">
+        <span sec:authorize="isAuthenticated()">
+            Logged user: <span sec:authentication="name"></span> | <a th:href="@{/logout}">Log Out</a>
+        </span>
+    </div>
+</body>
+
+</html>
+
+
+
+
