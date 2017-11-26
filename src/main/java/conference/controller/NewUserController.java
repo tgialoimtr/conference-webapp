@@ -1,9 +1,5 @@
 package conference.controller;
 
-import java.util.Map;
-import java.util.List;
-import java.util.LinkedList;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,17 +27,6 @@ public class NewUserController {
 	public String newuser() {
 		return "newuser";
 	}
-
-	@RequestMapping(value = "/listuser")
-	public String listUser(Map<String, Object> model) {
-		Iterable<User> userIter = userrepo.findAll();
-//		Iterable<User> userIter
-//	    while (userIter.hasNext()) {
-//	        collection.add(iterator.next());
-//	    }
-		model.put("userList", userIter);
-		return "listuser";
-	}
 	
 	@RequestMapping(value = "/user/add")
 	public String addUser(@Valid User user, BindingResult bindingResult) {
@@ -50,7 +35,7 @@ public class NewUserController {
 		} else {
 			userrepo.save(user);
 		}
-		return "redirect:/listuser";
+		return "redirect:/admin-listuser";
 	}
 	
 }

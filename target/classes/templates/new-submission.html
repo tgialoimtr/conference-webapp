@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>New Submission</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<div th:include="layout :: include-fragment"/>
+<style>
+body { 
+    padding-top: 65px; 
+}
+* {
+  .border-radius(0) !important;
+}
+
+#field {
+    margin-bottom:20px;
+}
+</style>
+<script th:inline="javascript">
+  /*<![CDATA[*/
+  $(document).ready(function(){
+    var next = 1;
+    $(".add-more").click(function(e){
+        e.preventDefault();
+        var addto = "#field" + next;
+        var addRemove = "#field" + (next);
+        next = next + 1;
+        var newIn = '<input autocomplete="off" class="input form-control" id="field' + next + '" name="field' + next + '" type="text"/>';
+        var newInput = $(newIn);
+        var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >-</button></div><div id="field">';
+        var removeButton = $(removeBtn);
+        $(addto).after(newInput);
+        $(addRemove).after(removeButton);
+        $("#field" + next).attr('data-source',$(addto).attr('data-source'));
+        $("#count").val(next);  
+        
+            $('.remove-me').click(function(e){
+                e.preventDefault();
+                var fieldNum = this.id.charAt(this.id.length-1);
+                var fieldID = "#field" + fieldNum;
+                $(this).remove();
+                $(fieldID).remove();
+            });
+    });
+    
+
+    
+});
+/*]]>*/
+</script>
+</head>
+<body>
+<div th:include="layout :: userheader-fragment" >
+</div>
+
+<!-- @pdOid 9aaffef5-533a-4f24-8bbc-63baa6ac3028 */
+   public int userId;
+   /** @pdOid b9a766cc-f535-49c7-b055-95bacea36843 */
+   public java.lang.String title;
+   /** @pdOid 2c5d4447-3834-4876-8e72-3e611e98bd31 */
+   public java.lang.String authors;
+   /** @pdOid 9baa5db5-5740-4914-8263-ab4bb036eb4c */
+   public java.lang.String pdfFile;
+   /** @pdOid 9fbb649b-c9cb-42d4-bd27-357df2e5cca0 */
+   public java.lang.String texFile;
+   /** @pdOid c7e7df79-bfe6-4328-b049-4b344a0b01a1 */
+   @Column(name = "abstract")
+   public java.lang.String abstract_;
+   /** @pdOid 06aed742-62b5-48b5-928e-c59ab204365f */
+   public java.lang.String keyword; -->
+
+<div class="row">
+<div class="container col-lg-6 col-lg-offset-3">
+ <form class="form-horizontal" th:action="@{/submission/add}" th:object="${submission}" action="#" method="post">
+  <h3>Submission Information</h3>
+  <div class="form-group">
+    <label class="control-label col-lg-2" for="title">Title:</label>
+    <div class="col-lg-10">
+      <input type="text" class="form-control" id="title" th:field="*{title}" placeholder="Paper Title" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-lg-2" for="abstract">Abstract:</label>
+    <div class="col-lg-10">
+      <textarea type="text" class="form-control" id="abstract" th:field="*{abstract0}" placeholder="Enter Abstract" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-lg-2" for="keyword">Keywords:</label>
+    <div class="col-lg-10">
+      <input type="text" class="form-control" id="keyword" th:field="*{keyword}" placeholder="Keywords" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-lg-2" for="pdfFile">PDF File:</label>
+    <div class="col-lg-4">
+      <input type="text" class="form-control" id="pdfFile" th:field="*{pdfFile}" placeholder="Not available yet" disabled="True" value="NaN" />
+    </div>
+    <label class="control-label col-lg-2" for="texFile">TEX File:</label>
+    <div class="col-lg-4">
+      <input type="text" class="form-control" id="texFile" th:field="*{texFile}" placeholder="Not available yet" disabled="True" value="NaN" />
+    </div>
+  </div>
+
+    <h3>Author Information</h3>
+    <input type="hidden" name="count" value="1" />
+    <div class="control-group form-group" id="fields">
+        <label class="control-label col-lg-2" for="field1">Authors:</label>
+        <div class="controls col-lg-10" id="profs"> 
+            <!-- <form class="input-append"> -->
+                <div id="field"><input autocomplete="off" class="input form-control" th:field="*{authors}" id="field1" name="prof1" type="text" placeholder="Type something" data-items="8"/><button id="b1" class="btn add-more" type="button">+</button></div>
+            <!-- </form> -->
+        <small>Press + to add another author</small>
+        </div>
+    </div>
+
+<!-- 
+
+
+  <div class="form-group">
+    <label class="control-label col-lg-2" for="first-name">First Name:</label>
+    <div class="col-lg-4">
+      <input type="password" class="form-control" id="first-name" th:field="*{firstName}" placeholder="First name" />
+    </div>
+    <label class="control-label col-lg-2" for="last-name">Last Name:</label>
+    <div class="col-lg-4">
+      <input type="password" class="form-control" id="last-name" th:field="*{lastName}" placeholder="Last name" />
+    </div>
+  </div> -->
+  <div class="form-group">
+    <label class="control-label col-lg-2" for="address">Address:</label>
+    <div class="col-lg-10">
+      <input type="text" class="form-control" id="address" placeholder="Address" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-lg-2" for="affiliation">Affiliation:</label>
+    <div class="col-lg-10">
+      <input type="text" class="form-control" id="affiliation" placeholder="Affiliation" />
+    </div>
+  </div>
+
+ 
+
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+
+</form> 
+</div>
+</div>
+
+    
+</body>
+</html>
+
+

@@ -1,0 +1,6 @@
+conference/controller/OcrStatusController.class
+conference/Application.class
+conference/controller/NewUserController.class
+webapp/service/CalcService.class
+conference/repository/UserRepository.class
+conference/model/User.class

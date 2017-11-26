@@ -1,0 +1,10 @@
+/home/loitg/workspace/webapp/src/main/java/conference/repository/SubmissionRepository.java
+/home/loitg/workspace/webapp/src/main/java/webapp/service/CalcService.java
+/home/loitg/workspace/webapp/src/main/java/conference/controller/AdminController.java
+/home/loitg/workspace/webapp/src/main/java/conference/model/User.java
+/home/loitg/workspace/webapp/src/main/java/conference/repository/UserRepository.java
+/home/loitg/workspace/webapp/src/main/java/conference/controller/NewUserController.java
+/home/loitg/workspace/webapp/src/main/java/conference/Application.java
+/home/loitg/workspace/webapp/src/main/java/conference/controller/NewSubmissionController.java
+/home/loitg/workspace/webapp/src/main/java/conference/model/Submission.java
+/home/loitg/workspace/webapp/src/main/java/conference/controller/OcrStatusController.java
