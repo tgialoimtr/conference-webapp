@@ -33,6 +33,7 @@
 	               <li><a th:href="@{/new-submission}">New Submission</a></li>
 	               <li><a href="#">My Submissions</a></li>
 	               <li><a href="#">Submission Rules</a></li>
+	               <li><a th:href="@{/review}">Reviewer</a></li>
 	           </ul>
 	         </li>
 	         <li><a th:href="@{/newuser}">Register</a></li>
@@ -54,6 +55,41 @@
 					</button>
 					<a class="navbar-brand" th:href="@{/admin}">
 						ADMIN PAGE
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="http://www.sciax2.it/forum/utenti/-kik_226760/" target="_blank">Return back</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+								Settings
+								<span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li class="dropdown-header">SETTINGS</li>
+									<li class=""><a href="#">Link</a></li>
+									<li class=""><a href="#">Other Link</a></li>
+									<li class=""><a href="#">Other Link</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Logout</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+	</div>
+	<div th:fragment="reviewheader-fragment">
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" th:href="@{/admin}">
+						REVIEW PAGE
 					</a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -125,6 +161,27 @@
 			</div>
 		  </div>
 		</div> 
+	</div>
+	<div class="col col-lg-3" th:fragment="reviewmenu-fragment">			
+		<div class="panel-group" id="accordion">
+		  <div class="panel panel-default">
+			<div class="panel-heading">
+			  <h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+				Submission</a>
+			  </h4>
+			</div>
+			<div id="collapse1" class="panel-collapse collapse in">
+				<ul class="list-group">
+					<li class="list-group-item"><span class="badge">253</span> <a th:href="@{/admin-submission}">All</a></li>
+					<li class="list-group-item"><span class="badge">17</span> Untreated</li>
+					<li class="list-group-item"><span class="badge">3</span> Pending</li>
+					<li class="list-group-item"><span class="badge">3</span> Accepted</li>
+					<li class="list-group-item"><span class="badge">3</span> Rejected</li>
+				</ul>
+			</div>
+		  </div>
+		</div>
 	</div>
     <div th:fragment="secured">
         <span sec:authorize="isAuthenticated()">
