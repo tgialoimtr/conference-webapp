@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Payment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<div th:include="layout :: include-fragment"/>
+<style>
+    body { 
+    padding-top: 65px; 
+}
+</style>
+</head>
+<body>
+<div th:include="layout :: userheader-fragment" >
+</div>
+
+
+<div class="row">
+<div class="container col-lg-6 col-lg-offset-3">
+ <form class="form-horizontal" th:action="@{/user/add}" th:object="${user}" action="#" method="post">
+  <h3>Payment Information</h3>
+  <div class="form-group">
+    <img th:src="@{/img/pay.png}" alt="Los Angeles"/>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+
+</form> 
+</div>
+</div>
+
+    
+</body>
+</html>
