@@ -73,6 +73,26 @@ body {
 <div class="container col-lg-6 col-lg-offset-3">
  <form class="form-horizontal" th:action="@{/submission/add}" th:object="${submission}" action="#" method="post">
   <h3>Submission Information</h3>
+    <div class="form-group">
+    <label class="control-label col-lg-2" for="track">Track:</label>
+      <div class="col-lg-10">
+        <select class="form-control" data-live-search="true">
+            <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
+            <option data-tokens="mustard">Burger, Shake and a Smile</option>
+            <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+    <label class="control-label col-lg-2" for="session">Session:</label>
+      <div class="col-lg-10">
+        <select class="form-control" data-live-search="true">
+            <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
+            <option data-tokens="mustard">Burger, Shake and a Smile</option>
+            <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+        </select>
+      </div>
+    </div>
   <div class="form-group">
     <label class="control-label col-lg-2" for="title">Title:</label>
     <div class="col-lg-10">
@@ -93,16 +113,23 @@ body {
     </div>
   </div>
   <div class="form-group">
-    <label class="control-label col-lg-2" for="pdfFile">PDF File:</label>
+    <label class="control-label col-lg-2" for="pdfFile">PDF(.pdf):</label>
     <div class="col-lg-4">
       <input type="text" class="form-control" id="pdfFile" th:field="*{pdfFile}" placeholder="Not available yet" disabled="True" value="NaN" />
     </div>
-    <label class="control-label col-lg-2" for="texFile">TEX File:</label>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-lg-2" for="texFile">TEX(.tex):</label>
     <div class="col-lg-4">
       <input type="text" class="form-control" id="texFile" th:field="*{texFile}" placeholder="Not available yet" disabled="True" value="NaN" />
     </div>
   </div>
-
+  <div class="form-group">
+    <label class="control-label col-lg-2" for="texFile">Word(.docx):</label>
+    <div class="col-lg-4">
+      <input type="text" class="form-control" id="texFile" th:field="*{texFile}" placeholder="Not available yet" disabled="True" value="NaN" />
+    </div>
+  </div>
     <h3>Author Information</h3>
     <input type="hidden" name="count" value="1" />
     <div class="control-group form-group" id="fields">
