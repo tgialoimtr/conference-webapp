@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Administrator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<div th:include="layout :: include-fragment" />
+</head>
+<body>
+	    		<div th:include="layout :: reviewheader-fragment" >
+				</div>
+				<div class="container-fluid">
+					
+				<div th:replace="layout :: reviewmenu-fragment" />
+
+<div class="col-lg-9 content">
+	  			  <div class="panel panel-default">
+		<div class="panel-heading">
+			  <h4 class="panel-title">
+				All Submissions
+			  </h4>
+		</div>
+		<div class="panel-body">
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+			<th>ID</th>
+			<th>Title</th>
+			<th>Authors</th>
+			<th>Abstract</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+            <tr th:each="submission : ${submissionList}">
+				<td th:text="${submission.submissionId}"></td>
+				<td th:text="${submission.title}"></td>
+				<td th:text="${submission.authors}"></td>
+				<td th:text="${submission.abstract0}"></td>
+                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-ok"></span> Accept</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Reject</a></td>
+            </tr>
+    </table>
+ 
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
