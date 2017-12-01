@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Create Account</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<div th:include="layout :: include-fragment"/>
+<style>
+    body { 
+    padding-top: 65px; 
+}
+</style>
+</head>
+<body>
+<div th:include="layout :: userheader-fragment" >
+</div>
+
+
+<div class="row">
+<div class="container col-lg-6 col-lg-offset-3">
+ <form class="form-horizontal" th:action="@{/sponsor/add}" action="#" method="post">
+  <h3>Add Sponsor</h3>
+  <div class="form-group">
+    <label class="control-label col-lg-2">Name:</label>
+    <div class="col-lg-10">
+      <input type="text" class="form-control" id="sponsor" placeholder="Enter Name Sponsor" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-lg-2">Logo:</label>
+    <div class="col-lg-10">
+      <input type="text" class="form-control" placeholder="Not available yet" disabled="True" value="NaN" />
+    </div>
+  </div>
+  <div class="form-group">
+     <label class="control-label col-lg-2">Type_Conf:</label>
+    <div class="col-lg-10">
+        <select class="form-control" data-live-search="true">
+            <option data-tokens="ketchup mustard">Conference 2015</option>
+            <option data-tokens="mustard">Conference 2015</option>
+            <option data-tokens="frosting">Conference 2015</option>
+        </select>
+    </div> 
+  </div>
+    <div class="form-group">
+     <label class="control-label col-lg-2">Type_sponsor:</label>
+    <div class="col-lg-10">
+        <select class="form-control" data-live-search="true">
+            <option data-tokens="ketchup mustard">Gold</option>
+            <option data-tokens="mustard">Sliver</option>
+            <option data-tokens="frosting">...</option>
+        </select>
+    </div> 
+  </div>
+    <div class="form-group">
+    <label class="control-label col-lg-2">Website:</label>
+    <div class="col-lg-10">
+      <input type="text" class="form-control" placeholder="Enter URL website for sponsor" />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+
+</form> 
+</div>
+</div>
+
+    
+</body>
+</html>
